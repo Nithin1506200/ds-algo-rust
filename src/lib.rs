@@ -1,3 +1,4 @@
+mod basic;
 mod graphs;
 mod linked_list;
 mod misc;
