@@ -1,4 +1,6 @@
+mod graphs;
 mod linked_list;
+mod misc;
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right

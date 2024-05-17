@@ -1,13 +1,13 @@
 use super::LinkedList;
 #[allow(dead_code)]
 pub fn reverse_linked_list(mut head: Option<Box<LinkedList>>) -> Option<Box<LinkedList>> {
-    let mut reversed: Option<Box<LinkedList>> = None;
+    let mut prev: Option<Box<LinkedList>> = None;
     while let Some(mut node) = head {
         head = node.next.take();
-        node.next = reversed;
-        reversed = Some(node);
+        node.next = prev;
+        prev = Some(node);
     }
-    reversed
+    prev
 }
 #[cfg(test)]
 mod tests {
