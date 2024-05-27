@@ -32,15 +32,17 @@ pub fn distribute_coins(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 }
 
 pub fn distribute_coins2(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
-    fn dfs(n: &Option<Rc<RefCell<TreeNode>>>, res: &mut i32) -> Option<i32> {
+    fn dfs(n: Option<Rc<RefCell<TreeNode>>>, res: &mut i32) -> Option<i32> {
         let n = n.as_ref()?;
         let n = n.borrow();
-        let flow = dfs(&n.left, res).unwrap_or(0) + dfs(&n.right, res).unwrap_or(0) + n.val - 1;
+        let flow =
+            dfs(n.left.clone(), res).unwrap_or(0) + dfs(n.right.clone(), res).unwrap_or(0) + n.val
+                - 1;
         *res += flow.abs();
         Some(flow)
     }
     let mut res = 0;
-    dfs(&root, &mut res);
+    dfs(root, &mut res);
     res
 }
 

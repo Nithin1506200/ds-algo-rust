@@ -1,4 +1,6 @@
 mod basic;
+mod binary_search;
+mod dp;
 mod linked_list;
 mod misc;
 mod trees;
