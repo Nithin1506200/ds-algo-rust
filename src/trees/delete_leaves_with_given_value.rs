@@ -1,7 +1,11 @@
-// Given a binary tree root and an integer target, delete all the leaf nodes with value target.
+/**
+ *
+https://leetcode.com/problems/delete-leaves-with-a-given-value/description/?envType=daily-question&envId=2024-05-17
 
-// Note that once you delete a leaf node with value target, if its parent node becomes a leaf node and has the value target, it should also be deleted (you need to continue doing that until you cannot).
+ Given a binary tree root and an integer target, delete all the leaf nodes with value target.
 
+ Note that once you delete a leaf node with value target, if its parent node becomes a leaf node and has the value target, it should also be deleted (you need to continue doing that until you cannot).
+ */
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -31,7 +35,7 @@ pub fn remove_leaf_nodes(
     }
 }
 #[cfg(test)]
-mod Test {
+mod test {
     #[test]
     fn test1() {}
 }

@@ -1,7 +1,7 @@
 mod basic;
-mod graphs;
 mod linked_list;
 mod misc;
+mod trees;
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right
