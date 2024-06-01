@@ -1,5 +1,6 @@
 mod basic;
 mod binary_search;
+mod bit_manipulation;
 mod dp;
 mod linked_list;
 mod misc;

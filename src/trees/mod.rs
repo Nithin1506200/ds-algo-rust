@@ -2,6 +2,7 @@ mod delete_leaves_with_given_value;
 mod distribute_coins;
 mod maximum_difference_between_node_and_ancestor;
 mod maximum_width_of_binary_tree;
+mod test;
 
 use std::{cell::RefCell, rc::Rc};
 
