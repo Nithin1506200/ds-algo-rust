@@ -4,7 +4,6 @@ pub fn longest_palindrome(s: String) -> i32 {
     let mut ans = 0;
     let mut hs: HashMap<char, ()> = HashMap::new();
     for char in s.chars() {
-        let char = char;
         if hs.get(&char).is_some() {
             ans += 2;
             hs.remove(&char);

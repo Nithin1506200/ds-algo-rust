@@ -26,23 +26,20 @@ impl TreeNode {
 
 macro_rules! tree {
     ($($val:expr),*) => {{
-
         use super::*;
         let mut iter = vec![$(stringify!($val)),*].into_iter();
         fn build_tree<'a>(iter: &mut impl Iterator<Item = &'a str>) -> Option<Rc<RefCell<TreeNode>>>
          {
             match iter.next() {
-                Some("null") => None,
-                Some(val) => {
+                Some(r#""null""#) => None,
+                Some(val) if val.parse::<i32>().is_ok() => {
                     let parsed_val = val.parse::<i32>().unwrap();
-                    let mut node = Rc::new(RefCell::new(TreeNode::new(parsed_val)));
+                    let node = Rc::new(RefCell::new(TreeNode::new(parsed_val)));
                     node.borrow_mut().left=build_tree(iter);
                     node.borrow_mut().right=build_tree(iter);
-
-                    // *left =build_tree(iter);
                     Some(node)
                 },
-                None => None,
+                _ => None,
             }
         }
 
@@ -52,9 +49,8 @@ macro_rules! tree {
 
 #[cfg(test)]
 mod test {
-
     #[test]
     fn test() {
-        let x = tree![Some(1), Some(2), Some(3)];
+        let x = tree![1, 2, 3, "null"];
     }
 }
