@@ -19,3 +19,13 @@ pub fn is_same_tree(p: Option<Rc<RefCell<TreeNode>>>, q: Option<Rc<RefCell<TreeN
         (_, _) => false,
     }
 }
+#[cfg(test)]
+mod test {
+    use crate::trees;
+
+    use super::*;
+    #[test]
+    fn test() {
+        // assert_eq!(is_same_tree(tree![1, 2, 3], tree![1, 2, 3]), true);
+    }
+}

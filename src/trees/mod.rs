@@ -23,7 +23,8 @@ impl TreeNode {
         }
     }
 }
-
+#[macro_use]
+#[macro_export]
 macro_rules! tree {
     ($($val:expr),*) => {{
         use super::*;
