@@ -1,3 +1,4 @@
+mod arrays;
 mod basic;
 mod binary_search;
 mod bit_manipulation;
@@ -6,6 +7,7 @@ mod greedy;
 mod hash_table;
 mod linked_list;
 mod misc;
+mod sorting;
 mod trees;
 mod trie;
 mod two_pointer;

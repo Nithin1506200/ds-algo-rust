@@ -15,3 +15,55 @@
 
 // Input: dictionary = ["a","b","c"], sentence = "aadsfasf absbs bbab cadsfafs"
 // Output: "a a b c"
+use std::collections::HashSet;
+pub fn replace_words_dict(dictionary: Vec<String>, sentence: String) -> String {
+    let mut hash_set = HashSet::new();
+    let (mut min_len, mut max_len) = (usize::MAX, 0);
+    for i in dictionary {
+        hash_set.insert(i.clone());
+        min_len = min_len.min(i.len());
+        max_len = max_len.max(i.len());
+    }
+
+    fn get_root(
+        word: String,
+        hash_set: &HashSet<String>,
+        min_len: usize,
+        max_len: usize,
+    ) -> String {
+        let len = word.len();
+        if len < min_len {
+            return word;
+        }
+
+        for i in 0..len {
+            println!("------------ xxx xxxxxx {:?}  {:?}", i, len);
+            let key = &word[0..i].to_string();
+            if hash_set.contains(key) {
+                return key.clone();
+            }
+        }
+        word
+    }
+    let mut ans: Vec<String> = Vec::new();
+    for str in sentence.split(" ").into_iter() {
+        ans.push(get_root(str.to_string(), &hash_set, min_len, max_len));
+    }
+
+    ans.join(" ")
+}
+
+#[cfg(test)]
+mod test {
+    use self::super::*;
+    #[test]
+    fn replace_words_dict_test() {
+        assert_eq!(
+            replace_words_dict(
+                vec!["cat".into(), "bat".into(), "rat".into()],
+                "the cattle was rattled jjjjj by the battery".into()
+            ),
+            "the cat was rat by the bat"
+        );
+    }
+}

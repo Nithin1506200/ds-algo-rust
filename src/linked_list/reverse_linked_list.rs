@@ -1,9 +1,9 @@
-use super::LinkedList;
+use super::ListNode;
 #[allow(dead_code)]
-pub fn reverse_linked_list(mut head: Option<Box<LinkedList>>) -> Option<Box<LinkedList>> {
-    let mut prev: Option<Box<LinkedList>> = None;
+pub fn reverse_linked_list(mut head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    let mut prev: Option<Box<ListNode>> = None;
     while let Some(mut node) = head {
-        head = node.next.take();
+        head = node.next;
         node.next = prev;
         prev = Some(node);
     }
@@ -15,7 +15,9 @@ mod tests {
 
     #[test]
     fn it_works() {
-        let ll = reverse_linked_list(LinkedList::from_array(&[1, 2, 5, 4, 3]));
-        println!("Solution {:?}", ll);
+        assert_eq!(
+            reverse_linked_list(ListNode::from_array(&[1, 2, 5, 4, 3])),
+            ListNode::from_array(&[3, 4, 5, 2, 1])
+        )
     }
 }
