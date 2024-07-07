@@ -7,11 +7,11 @@ mod greedy;
 mod hash_table;
 mod linked_list;
 mod misc;
+mod sliding_window;
 mod sorting;
 mod trees;
 mod trie;
 mod two_pointer;
-
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }

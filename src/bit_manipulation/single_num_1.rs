@@ -1,4 +1,4 @@
-fn single_num_1(arr: Vec<i32>) -> i32 {
+pub fn single_num_1(arr: Vec<i32>) -> i32 {
     let mut x = 0;
     for i in arr {
         x ^= i;

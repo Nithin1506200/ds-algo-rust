@@ -14,7 +14,7 @@ pub struct ListNode {
 #[allow(dead_code)]
 impl ListNode {
     #[inline]
-    fn new(val: i32) -> Self {
+    pub fn new(val: i32) -> Self {
         ListNode { next: None, val }
     }
     fn append(&mut self, data: i32) {
