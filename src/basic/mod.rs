@@ -1,3 +1,4 @@
+mod arrays;
 mod r#box;
 mod hashmap;
 mod r#option;
