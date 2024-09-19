@@ -1,4 +1,3 @@
-#[test]
-fn init_arrays() {
-    let mut _arr: [u8; 8] = [0; 8];
+fn init_arrays(nums: Vec<i32>) {
+    todo!()
 }
