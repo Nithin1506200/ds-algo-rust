@@ -74,7 +74,6 @@ pub fn length_of_lis_(nums: Vec<i32>) -> i32 {
         } else {
             arr.push(*i);
         }
-        println!("{:#?}", &arr);
     }
     arr.len() as i32
 }
