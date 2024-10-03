@@ -2,17 +2,14 @@ mod replace;
 
 #[derive(Debug)]
 pub struct Trie {
-    dict: [Option<Box<Self>>; 26],
+    dict: [Option<Box<Trie>>; 26],
     ends_here: bool,
 }
 
 impl Trie {
-    const fn new() -> Self {
+    fn new() -> Self {
         Self {
-            dict: [
-                None, None, None, None, None, None, None, None, None, None, None, None, None, None,
-                None, None, None, None, None, None, None, None, None, None, None, None,
-            ],
+            dict: [const { None }; 26],
             ends_here: false,
         }
     }
