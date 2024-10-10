@@ -1,5 +1,7 @@
 mod longest_substring_without_repeating;
 mod max_consecutive_ones_iii;
+mod minimum_swaps_for_valid_parenthesis;
+mod minimum_to_add_valid_parenthesis;
 mod palindromic_substring;
 mod reverse_string;
 mod score_of_string;

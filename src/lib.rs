@@ -3,6 +3,7 @@ mod basic;
 mod binary_search;
 mod bit_manipulation;
 mod dp;
+mod graphs;
 mod greedy;
 mod hash_table;
 mod linked_list;

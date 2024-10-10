@@ -5,6 +5,7 @@ mod maximum_difference_between_node_and_ancestor;
 mod maximum_path_sum;
 mod maximum_width_of_binary_tree;
 mod path_sum_2;
+mod sum_root_to_leaf;
 
 use std::{cell::RefCell, rc::Rc};
 #[derive(Debug, PartialEq, Eq)]

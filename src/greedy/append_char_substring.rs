@@ -16,7 +16,20 @@ pub fn append_characters(s: String, t: String) -> i32 {
     }
     ans
 }
+pub fn min_add_to_make_valid(s: String) -> i32 {
+    let mut ans: i32 = 0;
+    let opening: char = '(';
+    let closing = ")";
 
+    for i in s.chars() {
+        if i == opening.to_owned() as char {
+            ans += 1;
+        } else {
+            ans -= 1;
+        }
+    }
+    ans.abs()
+}
 #[cfg(test)]
 mod test {
     use super::*;
