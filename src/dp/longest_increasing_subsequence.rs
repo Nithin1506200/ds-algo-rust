@@ -19,21 +19,20 @@ Given an array arr[] of size N, the task is to find the length of the Longest In
     Explanation: The whole array is sorted
 
 */
+
 pub fn length_of_lis(nums: Vec<i32>) -> i32 {
     //O(n^2)
     // each element represents the length of lis ending at that index
-    let mut arr = vec![1; nums.len()];
+    let mut dp = vec![1; nums.len()];
 
     for i in 0..(nums.len()) {
         for j in 0..(i) {
             if nums[i] > nums[j] {
-                if arr[j] + 1 > arr[i] {
-                    arr[i] = arr[j] + 1
-                }
+                dp[i] = dp[i].max(dp[j] + 1)
             }
         }
     }
-    **arr.iter().max().get_or_insert(&0)
+    **dp.iter().max().get_or_insert(&0)
 }
 
 //https://www.youtube.com/watch?v=on2hvxBXJH4
