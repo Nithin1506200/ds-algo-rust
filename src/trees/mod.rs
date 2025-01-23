@@ -1,6 +1,7 @@
 mod delete_leaves_with_given_value;
 mod distribute_coins;
 mod is_same_tree;
+mod max_depth;
 mod maximum_difference_between_node_and_ancestor;
 mod maximum_path_sum;
 mod maximum_width_of_binary_tree;
