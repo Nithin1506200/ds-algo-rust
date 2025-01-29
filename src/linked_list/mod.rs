@@ -3,8 +3,9 @@ use std::ptr::eq;
 pub mod double_ll;
 mod find_length;
 mod odd_even_linked_list;
-mod remove_ele_if_greater_right_exist;
+
 mod remove_greater_nodes;
+mod remove_nth_from_last;
 mod reverse_linked_list;
 #[allow(dead_code)]
 // Definition for singly-linked list.
@@ -30,6 +31,15 @@ impl ListNode {
                 break;
             }
         }
+    }
+    pub fn to_array(a: &Option<Box<ListNode>>) -> Vec<i32> {
+        let mut v = vec![];
+        let mut ptr = a.as_ref();
+        while let Some(node) = ptr {
+            v.push(node.val);
+            ptr = node.next.as_ref();
+        }
+        v
     }
 
     pub fn from_array(arr: &[i32]) -> Option<Box<ListNode>> {
