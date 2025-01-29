@@ -4,6 +4,7 @@ pub mod double_ll;
 mod find_length;
 mod odd_even_linked_list;
 mod remove_ele_if_greater_right_exist;
+mod remove_greater_nodes;
 mod reverse_linked_list;
 #[allow(dead_code)]
 // Definition for singly-linked list.
