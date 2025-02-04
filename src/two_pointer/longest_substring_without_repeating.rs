@@ -32,7 +32,19 @@ pub fn length_of_longest_substring(s: String) -> i32 {
     }
     ans
 }
-
+fn length_of_longest_substring_(s: String) -> i32 {
+    let mut ans = 0;
+    let mut hp: HashMap<char, i32> = HashMap::new();
+    let mut left_ptr = 0;
+    for (i, char) in s.chars().enumerate() {
+        if let Some(indx) = hp.get(&char) {
+            left_ptr = left_ptr.max(*indx + 1);
+        };
+        hp.insert(char, i as i32);
+        ans = ans.max(i as i32 - left_ptr + 1);
+    }
+    ans
+}
 #[cfg(test)]
 mod test {
     use super::*;

@@ -1,3 +1,4 @@
+mod longest_repeating_character_replacement;
 mod longest_substring_without_repeating;
 mod max_consecutive_ones_iii;
 mod minimum_swaps_for_valid_parenthesis;
