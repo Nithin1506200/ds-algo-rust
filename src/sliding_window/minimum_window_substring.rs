@@ -7,16 +7,24 @@ pub fn min_window_arr(s: String, t: String) -> String {
     let mut lptr = 0;
     let mut need = 0;
     let mut freq = [0; (b'z' - b'A') as usize + 1];
-    macro_rules! freq_c {
+    let mut window = [0; (b'z' - b'A') as usize + 1];
+    macro_rules! freq {
         [$i:expr] => {
             freq[($i - b'A') as usize]
         };
     }
+    macro_rules! window {
+        [$i:expr] => {
+            window[($i - b'A') as usize]
+        };
+    }
     for i in t.bytes() {
-        freq_c![i] += 1;
+        freq![i] += 1;
     }
     let need = freq.iter().fold(0, |acc, a| acc + a);
-
+    for i in s.bytes() {
+        window![i] += 1;
+    }
     todo!();
 }
 pub fn min_window2(s: String, t: String) -> String {

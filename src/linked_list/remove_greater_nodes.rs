@@ -14,6 +14,8 @@
 // Output: [1,1,1,1]
 // Explanation: Every node has value 1, so no nodes are removed.
 
+use crate::linked_list::double_ll::Node;
+
 use super::ListNode;
 
 fn remove_nodes(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
@@ -39,6 +41,27 @@ fn remove_nodes(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
     solve(head)
 }
 
+fn remove_nodes2(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+    fn solve(head: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
+        match head {
+            Some(mut node) => {
+                node.next = solve(node.next);
+                match &node.next {
+                    Some(next) => {
+                        if next.val > node.val {
+                            node.next
+                        } else {
+                            Some(node)
+                        }
+                    }
+                    None => Some(node),
+                }
+            }
+            None => None,
+        }
+    }
+    solve(head)
+}
 #[cfg(test)]
 mod test {
     use super::*;
@@ -46,7 +69,7 @@ mod test {
     #[test]
     fn test() {
         assert_eq!(
-            remove_nodes(ListNode::from_array(&vec![5, 2, 13, 8])),
+            remove_nodes2(ListNode::from_array(&vec![5, 2, 13, 8])),
             ListNode::from_array(&vec![13, 8])
         );
     }
