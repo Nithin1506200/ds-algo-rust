@@ -5,7 +5,6 @@ use std::{collections::HashMap, slice::Windows};
 //(b'z' - b'A') as usize + 1
 pub fn min_window_arr(s: String, t: String) -> String {
     let mut lptr = 0;
-    let mut need = 0;
     let mut freq = [0; (b'z' - b'A') as usize + 1];
     let mut window = [0; (b'z' - b'A') as usize + 1];
     macro_rules! freq {
@@ -21,7 +20,9 @@ pub fn min_window_arr(s: String, t: String) -> String {
     for i in t.bytes() {
         freq![i] += 1;
     }
-    let need = freq.iter().fold(0, |acc, a| acc + a);
+    let need = freq
+        .iter()
+        .fold(0, |acc, a| acc + if a > &0 { 1 } else { 0 });
     for i in s.bytes() {
         window![i] += 1;
     }

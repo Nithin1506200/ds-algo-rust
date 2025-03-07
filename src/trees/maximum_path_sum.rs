@@ -1,4 +1,3 @@
-use crate::tree;
 use std::cell::RefCell;
 use std::rc::Rc;
 
@@ -23,5 +22,6 @@ pub fn max_path_sum(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
 
 #[test]
 fn test() {
+    use crate::tree;
     assert_eq!(max_path_sum(tree![-10, 9, 20, null, null, 15, 7]), 42);
 }

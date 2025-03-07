@@ -17,10 +17,4 @@ fn to_owned_test() {
 fn linked_list_test() {
     let mut linked_list = ListNode::from_array(&[1, 2]);
     let mut tail = linked_list.as_ref().unwrap().next.to_owned();
-    // match tail.as_mut() {
-    //     Some(mut tail) => tail.as_mut().val = 9,
-    //     None => (),
-    // }
-
-    // println!("{:?} {:?}", &linked_list, &tail)
 }

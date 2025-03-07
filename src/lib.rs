@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 mod arrays;
 mod basic;
 mod binary_search;

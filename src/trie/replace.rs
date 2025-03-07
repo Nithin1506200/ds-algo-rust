@@ -31,6 +31,7 @@ pub fn replace_words_dict(dictionary: Vec<String>, sentence: String) -> String {
         min_len: usize,
         max_len: usize,
     ) -> String {
+        let _ = max_len;
         let len = word.len();
         if len < min_len {
             return word;

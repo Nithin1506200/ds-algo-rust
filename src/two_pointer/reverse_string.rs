@@ -9,7 +9,6 @@ pub fn reverse_string(s: &mut Vec<char>) {
 }
 #[cfg(test)]
 mod test {
-    use super::reverse_string;
 
     #[test]
     fn test() {

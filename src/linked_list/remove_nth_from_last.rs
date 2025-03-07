@@ -1,8 +1,6 @@
 // Remove N-th node from the end of a Linked List
 // https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 
-use std::{cell::RefCell, rc::Rc};
-
 use super::ListNode;
 
 pub fn remove_nth_from_end(head: Option<Box<ListNode>>, n: i32) -> Option<Box<ListNode>> {
